@@ -17,7 +17,7 @@ const scissors_div = document.querySelector('.photo3')
 
 
 function getComputerChoice() {
-    const selections = ['r','p','s'];
+    const selections = ['rock','paper','scissors'];
     const randomNumber = Math.floor(Math.random() * 3);
     return selections[randomNumber]
 
@@ -26,22 +26,25 @@ function getComputerChoice() {
 
 function choice(userChoice){
 const computerChoice = getComputerChoice();
-console.log("computer chose  " + computerChoice)
-console.log("user chose " + userChoice)
+//checking for a tie
+if(userChoice == computerChoice){
+    alert("It is a Tie")
+    return;
+} 
 }
 
 
 function main() {
     rock_div.addEventListener('click', function () {
-        choice('r');
+        choice('rock');
     })
 
     paper_div.addEventListener('click', function () {
-        choice('p');
+        choice('paper');
     })
 
     scissors_div.addEventListener('click', function () {
-        choice('s');
+        choice('scissors');
     })
 
 }

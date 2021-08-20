@@ -95,7 +95,7 @@ if(userChoice =="Paper"){
     }
 }
 //check choice for scissors
-if(userChoice =="cissors"){
+if(userChoice =="Scissors"){
     if(computerChoice == "Rock"){
         lose(userChoice,computerChoice)
        // result_div.textContent = "User chose "+userChoice+  " Computer chose "+ computerChoice + " Computer WON "

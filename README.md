@@ -8,5 +8,5 @@ If the computer wins the computer will be rewarded a point.
 If both the player and the computer click on the same button in the same round that will result in a tie.
 May the best man Win!
 
-https://github.com/LP45/ModuleProject.git
+https://lp45.github.io/ModuleProject/
 

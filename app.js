@@ -1,5 +1,5 @@
-const playerScore = 0
-const computerScore = 0
+let playerScore = 0
+let computerScore = 0
 
 const userScore_span = document.querySelector("#userScore")
 const compScore_span = document.querySelector("#compScore")
@@ -24,13 +24,79 @@ function getComputerChoice() {
 }
 //console.log(getComputerChoice())
 
+function win(user,comp){
+    playerScore++;
+    
+    userScore_span.innerHTML = playerScore
+    compScore_span.innerHTML = computerScore
+}
+
+function lose(){
+    
+    computerScore++
+
+    console.log("lost")
+}
+
+function draw(){
+    let draw = "its a draw"
+    return draw.bold();
+}
+
+
+
+
+
 function choice(userChoice){
 const computerChoice = getComputerChoice();
 //checking for a tie
 if(userChoice == computerChoice){
-    alert("It is a Tie")
+    draw();
+    //result_div.textContent ="It is a Tie"
     return;
 } 
+
+if(userChoice =="rock"){
+    if(computerChoice == "scissors"){
+        win(user,comp)
+        //result_div.textContent = "User chose "+userChoice.bold() +  " Computer chose "+ computerChoice.bold + " User WON! "
+        return;
+    }
+    else{
+        lose(user,comp)
+        //result_div.textContent = "User chose "+userChoice.bold() +  " Computer chose "+ computerChoice.bold() + " Computer WON! "
+        return
+    }
+}
+
+
+//check choice for paper
+if(userChoice =="paper"){
+    if(computerChoice == "scissors"){
+        lose(user,comp)
+       // result_div.textContent = "User chose "+userChoice +  " Computer chose "+ computerChoice + " Computer WON! "
+        return;
+    }
+    else{
+        win(user,comp)
+       // result_div.textContent = "User chose "+userChoice +  " Computer chose "+ computerChoice + " User WON! "
+        return
+    }
+}
+//check choice for scissors
+if(userChoice =="scissors"){
+    if(computerChoice == "rock"){
+        lose(user,comp)
+       // result_div.textContent = "User chose "+userChoice+  " Computer chose "+ computerChoice + " Computer WON "
+        return;
+    }
+    else{
+        win(user,comp)
+        //result_div.textContent = "User chose "+userChoice +  " Computer chose "+ computerChoice + " User WON! "
+        return
+    }
+}
+
 }
 
 
